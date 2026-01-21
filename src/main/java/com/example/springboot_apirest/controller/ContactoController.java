@@ -1,5 +1,6 @@
 package com.example.springboot_apirest.controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +13,8 @@ import com.example.springboot_apirest.domain.dto.ContactoDTO;
 public class ContactoController {
     
     @PostMapping("/crear")
-    public ContactoDTO crearContacto(@RequestBody ContactoDTO contacto) {
-        return contacto;
+    public ResponseEntity<ContactoDTO> crearContacto(@RequestBody ContactoDTO contacto) {
+        System.out.println("se hizo una consulta");
+        return ResponseEntity.ok(contacto);
     }
 }
